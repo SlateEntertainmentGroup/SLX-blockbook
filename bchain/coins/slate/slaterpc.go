@@ -43,8 +43,15 @@ func (b *SlateRPC) Initialize() error {
 	// always create parser
 	b.Parser = NewSlateParser(params, b.ChainConfig)
 
-	b.Testnet = false
-	b.Network = "livenet"
+  // parameters for getInfo request
+	if params.Net == MainnetMagic {
+		b.Testnet = false
+		b.Network = "livenet"
+	} else {
+		b.Testnet = true
+		b.Network = "testnet"
+	}
+
 
 	glog.Info("rpc: block chain ", params.Name)
 

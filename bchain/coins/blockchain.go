@@ -107,6 +107,7 @@ func init() {
 	BlockChainFactories["Unobtanium"] = unobtanium.NewUnobtaniumRPC
 	BlockChainFactories["DeepOnion"] = deeponion.NewDeepOnionRPC
   BlockChainFactories["SLATE"] = slate.NewSlateRPC
+	BlockChainFactories["SLATE Testnet"] = slate.NewSlateRPC
 }
 
 // GetCoinNameFromConfig gets coin name and coin shortcut from config file
