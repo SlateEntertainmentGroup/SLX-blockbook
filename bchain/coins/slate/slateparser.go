@@ -1,4 +1,4 @@
-package pivx
+package slate
 
 import (
 	"blockbook/bchain"
