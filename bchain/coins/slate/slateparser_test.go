@@ -385,7 +385,7 @@ var testParseBlockTxs = map[int]testBlock{
 		txs: []string{
 			"556569e1bd20ae007853d839fda5cbefed4883ac53e6327a0a8a30180d242e24",
       "8088531725e8c7afee7a33656fc830ded950f17967316834a9c4aca1c1472223",
-      "c4b7a36756cd720e4dd5931813f762788b521c0eff27ffcd14832e26b3188340"
+      "c4b7a36756cd720e4dd5931813f762788b521c0eff27ffcd14832e26b3188340",
 		},
 	},
 	850000: {
@@ -393,7 +393,7 @@ var testParseBlockTxs = map[int]testBlock{
 		time: 1578371657,
 		txs: []string{
 			"842136f6c66acf4754f2c51717ffe5f6b0a9cd7383bd1dfc3a2939b54d7f4dd4",
-      "31758326940910fe3b7783bf4755a77df480bd768c94ac0ccd4e586322b191a5"
+      "31758326940910fe3b7783bf4755a77df480bd768c94ac0ccd4e586322b191a5",
 		},
 	},
 	850900: {
@@ -401,7 +401,7 @@ var testParseBlockTxs = map[int]testBlock{
 		time: 1534045750,
 		txs: []string{
 			"1865ad4ce57c225215fccaa5381a92abe16ce1369811ec069525fa49d6189658",
-      "ca91c8deb4c29ffdc9ee71162f14310f3795ac94a74bd3358517e8d4c4eadd59"
+      "ca91c8deb4c29ffdc9ee71162f14310f3795ac94a74bd3358517e8d4c4eadd59",
 		},
 	},
 	850920: {
@@ -409,7 +409,7 @@ var testParseBlockTxs = map[int]testBlock{
 		time: 1578427428,
 		txs: []string{
 			"87291e9bb556cd50e42ed061b77a7ba16d7e63a2a7ccb14744c0424c5815804c",
-      "035aca3440734fb075d61045e45bd6d21cf337a2d2531b2f12b91af7d7c94b0d"
+      "035aca3440734fb075d61045e45bd6d21cf337a2d2531b2f12b91af7d7c94b0d",
 		},
 	},
 }
