@@ -32,10 +32,12 @@ func NewSlateRPC(config json.RawMessage, pushHandler func(bchain.NotificationTyp
 
 // Initialize initializes PivXRPC instance.
 func (b *SlateRPC) Initialize() error {
-	chainName, err := b.GetChainInfoAndInitializeMempool(b)
+	ci, err := b.GetChainInfo()
 	if err != nil {
 		return err
 	}
+
+  chainName := ci.Chain
 
 	glog.Info("Chain name ", chainName)
 	params := GetChainParams(chainName)
