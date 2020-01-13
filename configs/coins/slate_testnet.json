@@ -34,7 +34,7 @@
     "service_type": "forking",
     "service_additional_params_template": "",
     "protect_memory": false,
-    "mainnet": true,
+    "mainnet": false,
     "server_config_file": "bitcoin_like.conf",
     "client_config_file": "bitcoin_like_client.conf",
     "additional_params": {
@@ -42,7 +42,7 @@
     }
   },
   "blockbook": {
-    "package_name": "blockbook-slate",
+    "package_name": "blockbook-slate-testnet",
     "system_user": "blockbook-slate",
     "internal_binding_template": ":{{.Ports.BlockbookInternal}}",
     "public_binding_template": ":{{.Ports.BlockbookPublic}}",
