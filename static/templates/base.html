@@ -21,11 +21,16 @@
                         <img src="/static/slate.png" height="42" />
                     </div>
                 </a>
-                <span class="navbar-text ml-md-auto">
+                <a class="navbar-brand d-block d-sm-none" href="/" title="Home">
+                    <div alt="Logo-sm" class="trezor-logo-svg-white">
+                        <img src="/static/slate.png" height="42" />
+                    </div>
+                </a>
+                <span class="navbar-text ml-md-auto d-none d-md-flex">
                     <a href="/" class="nav-link">{{.CoinLabel}} Explorer</a>
                 </span>
                 {{- if .InternalExplorer -}}
-                <ul class="navbar-nav flex-row ml-md-auto d-none d-lg-flex">
+                <ul class="navbar-nav flex-row ml-md-auto">
                     <li class="nav-item">
                         <a href="/blocks" class="nav-link">Blocks</a>
                     </li>
@@ -33,7 +38,7 @@
                         <a href="/" class="nav-link">Status</a>
                     </li>
                 </ul>
-                <span class="d-none ml-md-auto d-md-flex navbar-form navbar-left">
+                <span class="ml-md-auto navbar-form navbar-left">
                     <form id="search" action="/search" method="get">
                         <input name="q" type="text" class="form-control" placeholder="Search for block, transaction, address or xpub" focus="true">
                     </form>
@@ -41,13 +46,7 @@
                 {{- end -}}
                 <ul class="navbar-nav flex-row ml-md-auto d-none d-lg-flex ">
                     <li class="nav-item">
-                        <a href="https://trezor.io/" class="nav-link">Trezor</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://wallet.trezor.io/" class="nav-link">Wallet</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://trezor.io/support" class="nav-link">Support</a>
+                      <a href="https://slate.io/" class="nav-link" target="_blank">slate.io</a>
                     </li>
                 </ul>
             </nav>
@@ -63,18 +62,18 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-trezor">
                 <ul class="navbar-nav flex-row">
                     <li class="nav-item">
-                        <a class="nav-link" href="http://satoshilabs.com/" target="_blank" rel="noopener noreferrer">© 2019 SatoshiLabs</a>
+                        <a class="nav-link" href="http://satoshilabs.com/" target="_blank" rel="noopener noreferrer">© 2020 SatoshiLabs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{- .TOSLink -}}" target="_blank" rel="noopener noreferrer">Terms</a>
+                      <a class="nav-link" href="https://slateplay.com/" target="_blank" rel="noopener noreferrer">© 2020 SlatePlay corp.</a>
                     </li>
                 </ul>
-                <span class="d-none ml-md-auto d-md-flex navbar-form navbar-nav">
-                    <a href="/sendtx" class="nav-link">Send Transaction</a>
+                <span class="d-none ml-md-auto d-sm-flex navbar-form navbar-nav">
+                    <a href="/sendtx" class="nav-link active">Send Transaction</a>
                 </span>
-                <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-                    <li class="nav-item active">
-                        <a class="nav-link" rel="noopener noreferrer" href="http://shop.trezor.io">Don't have a Trezor? Get one!</a>
+                <ul class="navbar-nav flex-row ml-md-auto d-none d-sm-flex">
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" rel="noopener noreferrer" href="http://trezor.io">made with TREZOR Blockbook</a>
                     </li>
                 </ul>
             </nav>
