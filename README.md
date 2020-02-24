@@ -59,8 +59,6 @@ and remove the --certfile option. And now it is running with no SSL
 
 #########################################################################################################################
 
-# Blockbook
-
 **Blockbook** is back-end service for Trezor wallet. Main features of **Blockbook** are:
 
 - index of addresses and address balances of the connected block chain
