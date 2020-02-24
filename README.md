@@ -51,6 +51,12 @@ ImportantBlockbook uses a self-signed certificate. It is necessary to go to the 
 
 [![Go Report Card](https://goreportcard.com/badge/trezor/blockbook)](https://goreportcard.com/report/trezor/blockbook)
 
+***To disable SSL certificate***
+
+     systemctl edit --full blockbook-bitcoin.service
+
+and remove the --certfile option. And now it is running with no SSL
+
 #########################################################################################################################
 
 # Blockbook
