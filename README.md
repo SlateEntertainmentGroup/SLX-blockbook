@@ -1,4 +1,50 @@
+**How to install**
+
+You can install and run Blockbook on your computer. With Trezor Wallet installed and running as a local instance, you can be completely independent from connecting to SatoshiLabs servers.
+
+To install it on Linux, please use this step-by-step guide:
+
+1. To install Blockbook, you will need to use Linux Debian version 9 (Stretch) or later.
+
+Before you start installing Blockbook, please check the latest blockchain size for your cryptocurrency and be sure to have this amount + approximately 60% - 70% of the size of the blockchain for the blockbook available on your hard drive.
+
+Switch to root privileges before proceeding with the installation.
+
+2. Install docker using this guide:
+
+https://docs.docker.com/install/linux/docker-ce/debian/
+3. Clone blockbook git:
+
+git clone https://github.com/trezor/blockbook
+4. Go to blockbook directory and run:
+
+make all-<coin> (e.g., make all-bitcoin)
+5. Go to blockbook/build directory and run:
+
+apt install <package name> (e.g., apt install backend-bitcoin_0.16.1-satoshilabs1_amd64.deb)
+6. Now you can start synchronizing with the network:
+
+systemctl start backend-<coin>.service (e.g., systemctl start backend-bitcoin.service)
+7. If you want to check the status of your synchronizing go to /opt/coins/data/<coin>/backend (eg., /opt/coins/data/bitcoin/backend) and check the status in debug.log file.
+
+8. If the blockchain is fully synchronized, you can start installing your Blockbook. Go to the directory blockbook/build and run:
+
+apt install <blockbook package> (e.g., apt install blockbook-bitcoin_0.0.6_amd64.deb)
+9. Run Blockbook:
+
+systemctl start blockbook-<coin>.service (e.g., systemctl start blockbook-bitcoin.service)
+10. Blockbook is now synchronizing with your blockchain, you can check the status in /opt/coins/blockbook/<coin>/logs/blockbook.INFO (eg. /opt/coins/blockbook/bitcoin/logs/blockbook.INFO) or by visiting https://localhost:<blockbook public port> (e.g., https://localhost:9130 for bitcoin)
+
+11. After full synchronization, your Blockbook is now running at the localhost port.
+
+12. Now you can connect your Trezor Wallet to your local Blockbook instance by using a custom backend:
+
+Wallet settings - Bitcore Server URL - https://localhost:<blockbook public port> (e.g., https://localhost:9130 for Bitcoin)
+ImportantBlockbook uses a self-signed certificate. It is necessary to go to the address in your browser, confirm the certificate, and then add the address to your wallet.
+
 [![Go Report Card](https://goreportcard.com/badge/trezor/blockbook)](https://goreportcard.com/report/trezor/blockbook)
+
+###############################################################################################################################
 
 # Blockbook
 
