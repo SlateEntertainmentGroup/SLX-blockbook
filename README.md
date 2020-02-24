@@ -57,7 +57,7 @@ ImportantBlockbook uses a self-signed certificate. It is necessary to go to the 
 
 and remove the --certfile option. And now it is running with no SSL
 
-#########################################################################################################################
+##################################################################################################
 
 **Blockbook** is back-end service for Trezor wallet. Main features of **Blockbook** are:
 
