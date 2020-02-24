@@ -49,15 +49,19 @@ https://docs.docker.com/install/linux/docker-ce/debian/
 Wallet settings - Bitcore Server URL - https://localhost:<blockbook public port> (e.g., https://localhost:9130 for Bitcoin)
 ImportantBlockbook uses a self-signed certificate. It is necessary to go to the address in your browser, confirm the certificate, and then add the address to your wallet.
 
-[![Go Report Card](https://goreportcard.com/badge/trezor/blockbook)](https://goreportcard.com/report/trezor/blockbook)
 
-***To disable SSL certificate***
+
+**To disable SSL certificate**
 
      systemctl edit --full blockbook-bitcoin.service
 
 and remove the --certfile option. And now it is running with no SSL
 
-##################################################################################################
+##############################################################################
+
+**BLOCKBOOK**
+
+[![Go Report Card](https://goreportcard.com/badge/trezor/blockbook)](https://goreportcard.com/report/trezor/blockbook)
 
 **Blockbook** is back-end service for Trezor wallet. Main features of **Blockbook** are:
 
