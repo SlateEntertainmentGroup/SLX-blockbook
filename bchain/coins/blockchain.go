@@ -32,6 +32,7 @@ import (
 	"blockbook/bchain/coins/ravencoin"
 	"blockbook/bchain/coins/ritocoin"
 	"blockbook/bchain/coins/slate"
+	"blockbook/bchain/coins/bytz"
 	"blockbook/bchain/coins/unobtanium"
 	"blockbook/bchain/coins/vertcoin"
 	"blockbook/bchain/coins/viacoin"
@@ -108,6 +109,7 @@ func init() {
 	BlockChainFactories["DeepOnion"] = deeponion.NewDeepOnionRPC
   BlockChainFactories["SLATE"] = slate.NewSlateRPC
 	BlockChainFactories["SLATE Testnet"] = slate.NewSlateRPC
+	BlockChainFactories["BYTZ"] = bytz.NewSlateRPC
 }
 
 // GetCoinNameFromConfig gets coin name and coin shortcut from config file
