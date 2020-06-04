@@ -25,7 +25,7 @@
     "version": "0.1.0.0",
     "binary_url": "https://github.com/bytzcurrency/BYTZ/releases/download/v0.1.0.0/BYTZ-0.1.0.0-x86_64-linux-gnu.tar.gz",
     "verification_type": "sha256",
-    "verification_source": "aac5b13beb9ff96b0ce62d2258d54166c756c8336672a67c7aae6b73a76b0c03",
+    "verification_source": "da5b12184ab91be65baa1acfafa8c671ef012bb5e37aa0be1b1b6b2b56903b8a",
     "extract_command": "tar -C backend --strip 1 -xf",
     "exclude_files": ["bin/bytz-qt"],
     "exec_command_template": "{{.Env.BackendInstallPath}}/{{.Coin.Alias}}/bin/bytzd -datadir={{.Env.BackendDataPath}}/{{.Coin.Alias}}/backend -conf={{.Env.BackendInstallPath}}/{{.Coin.Alias}}/{{.Coin.Alias}}.conf -pid=/run/{{.Coin.Alias}}/{{.Coin.Alias}}.pid",
