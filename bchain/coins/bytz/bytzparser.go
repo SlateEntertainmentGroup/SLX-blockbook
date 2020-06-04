@@ -19,19 +19,34 @@ import (
 )
 
 const (
-	MainnetMagic wire.BitcoinNet = 0xa3eab581
+  //Net Magics
+	MainnetMagic wire.BitcoinNet = 0x81b5eaa3
+  TestnetMagic wire.BitcoinNet = 0x839fbb81
+
+  // Zerocoin op codes
+	OP_ZEROCOINMINT  = 0xc1
+	OP_ZEROCOINSPEND  = 0xc2
 )
 
 var (
 	MainNetParams chaincfg.Params
+  TestNetParams chaincfg.Params
 )
 
 func init() {
+  //BYTZ mainnet Address enconding magics
 	MainNetParams = chaincfg.MainNetParams
 	MainNetParams.Net = MainnetMagic
 	MainNetParams.PubKeyHashAddrID = []byte{125}
 	MainNetParams.ScriptHashAddrID = []byte{18}
 	MainNetParams.PrivateKeyID = []byte{140}
+
+  //BYTZ testnet Address encoding magics
+	TestNetParams = chaincfg.TestNet3Params
+	TestNetParams.Net = TestnetMagic
+	TestNetParams.PubKeyHashAddrID = []byte{66}   // starting with 'x' or 'y'
+	TestNetParams.ScriptHashAddrID = []byte{9}
+	TestNetParams.PrivateKeyID = []byte{144}
 }
 
 // BytzParser handle
@@ -56,11 +71,19 @@ func NewBytzParser(params *chaincfg.Params, c *btc.Configuration) *BytzParser {
 func GetChainParams(chain string) *chaincfg.Params {
 	if !chaincfg.IsRegistered(&MainNetParams) {
 		err := chaincfg.Register(&MainNetParams)
+    if err == nil {
+  			err = chaincfg.Register(&TestNetParams)
+  		}
 		if err != nil {
 			panic(err)
 		}
 	}
-	return &MainNetParams
+  switch chain {
+   	case "test":
+		    return &TestNetParams
+   	default:
+		    return &MainNetParams
+   	}
 }
 
 // ParseBlock parses raw block to our Block struct
@@ -210,11 +233,13 @@ func (p *BytzParser) ParseTxFromJson(msg json.RawMessage) (*bchain.Tx, error) {
 
 // outputScriptToAddresses converts ScriptPubKey to bitcoin addresses
 func (p *BytzParser) outputScriptToAddresses(script []byte) ([]string, bool, error) {
-	if (isZeroCoinSpendScript(script) || isZeroCoinMintScript(script)) {
-		hexScript := hex.EncodeToString(script)
-		anonAddr := "Anonymous " + hexScript
-		return []string{anonAddr}, false, nil
-	}
+  if isZeroCoinSpendScript(script) {
+   return []string{"Zerocoin Spend"}, false, nil
+}
+
+ if isZeroCoinMintScript(script) {
+   return []string{"Zerocoin Mint"}, false, nil
+}
 
 	rv, s, _ :=  p.BitcoinOutputScriptToAddressesFunc(script)
 	return rv, s, nil
@@ -236,22 +261,10 @@ func (p *BytzParser) GetAddrDescForUnknownInput(tx *bchain.Tx, input int) bchain
 
 // Checks if script is OP_ZEROCOINMINT
 func isZeroCoinMintScript(signatureScript []byte) bool {
-	OP_ZEROCOINMINT := byte(0xc1)
-
-	if (len(signatureScript) > 1 && signatureScript[0] == OP_ZEROCOINMINT) {
-		return true
-	}
-
-	return false
+	return len(signatureScript) > 1 && signatureScript[0] == OP_ZEROCOINMINT
 }
 
 // Checks if script is OP_ZEROCOINSPEND
 func isZeroCoinSpendScript(signatureScript []byte) bool {
-	OP_ZEROCOINSPEND := byte(0xc2)
-
-	if (len(signatureScript) >= 100 && signatureScript[0] == OP_ZEROCOINSPEND) {
-		return true
-	}
-
-	return false
+	return len(signatureScript) >= 100 && signatureScript[0] == OP_ZEROCOINSPEND
 }

@@ -110,6 +110,7 @@ func init() {
   BlockChainFactories["SLATE"] = slate.NewSlateRPC
 	BlockChainFactories["SLATE Testnet"] = slate.NewSlateRPC
 	BlockChainFactories["BYTZ"] = bytz.NewSlateRPC
+	BlockChainFactories["BYTZ Testnet"] = bytz.NewSlateRPC
 }
 
 // GetCoinNameFromConfig gets coin name and coin shortcut from config file
