@@ -22,10 +22,10 @@
     "package_name": "backend-bytz",
     "package_revision": "satoshilabs-1",
     "system_user": "bytz",
-    "version": "0.1.0.0",
-    "binary_url": "https://github.com/bytzcurrency/BYTZ/releases/download/v0.1.0.0/BYTZ-0.1.0.0-x86_64-linux-gnu.tar.gz",
+    "version": "0.1.0.2",
+    "binary_url": "https://github.com/bytzcurrency/BYTZ/releases/download/v0.1.0.2/BYTZ-0.1.0.2-x86_64-linux-gnu.tar.gz",
     "verification_type": "sha256",
-    "verification_source": "da5b12184ab91be65baa1acfafa8c671ef012bb5e37aa0be1b1b6b2b56903b8a",
+    "verification_source": "b87a621b0d69dc593c03299645299c813f120d775f90e51cf447de11c1073aa3",
     "extract_command": "tar -C backend --strip 1 -xf",
     "exclude_files": ["bin/bytz-qt"],
     "exec_command_template": "{{.Env.BackendInstallPath}}/{{.Coin.Alias}}/bin/bytzd -datadir={{.Env.BackendDataPath}}/{{.Coin.Alias}}/backend -conf={{.Env.BackendInstallPath}}/{{.Coin.Alias}}/{{.Coin.Alias}}.conf -pid=/run/{{.Coin.Alias}}/{{.Coin.Alias}}.pid",
@@ -57,7 +57,7 @@
     }
   },
   "meta": {
-    "package_maintainer": "Bytz team",
+    "package_maintainer": "BYTZ team",
     "package_maintainer_email": "o.mitrakhovich@binge.com"
   }
 }
