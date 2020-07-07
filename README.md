@@ -2,6 +2,12 @@
 
 # Blockbook
 
+# VM:
+
+user: omitrakhovich
+
+explorer09.dev.seg.io  204.92.235.56
+
 **Blockbook** is back-end service for Trezor wallet. Main features of **Blockbook** are:
 
 - index of addresses and address balances of the connected block chain
