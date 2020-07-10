@@ -6,7 +6,7 @@
 
 user: omitrakhovich
 
-explorer09.dev.seg.io  204.92.235.56
+explorer09.dev.seg.io  204.92.235.56 --mainnet
 
 **Blockbook** is back-end service for Trezor wallet. Main features of **Blockbook** are:
 
