@@ -20,7 +20,7 @@ https://docs.docker.com/install/linux/docker-ce/debian/
 
 4. Go to blockbook directory and run:
 
-         make all-<coin> (e.g., make all-bitcoin)
+         make all-<coin> (e.g., make all-bitcoin, make all-bytz_testnet)
   
 5. Go to blockbook/build directory and run:
 
