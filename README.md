@@ -38,7 +38,7 @@ https://docs.docker.com/install/linux/docker-ce/debian/
   
 9. Run Blockbook:
 
-        systemctl start blockbook-<coin>.service (e.g., systemctl start blockbook-bitcoin.service)
+        systemctl start blockbook-<coin>.service (e.g., systemctl start blockbook-bitcoin.service)(systemctl start blockbook-bytz-testnet.service)
   
 10. Blockbook is now synchronizing with your blockchain, you can check the status in /opt/coins/blockbook/<coin>/logs/blockbook.INFO (eg. /opt/coins/blockbook/bitcoin/logs/blockbook.INFO) or by visiting https://localhost:<blockbook public port> (e.g., https://localhost:9130 for bitcoin)
 
